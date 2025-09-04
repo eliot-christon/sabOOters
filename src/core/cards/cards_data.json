@@ -1,0 +1,220 @@
+{
+  "path_card": {
+    "START": {
+      "number": 0,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
+    },
+    "END": {
+      "number": 0,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
+    },
+    "ST-UR": {
+      "number": 0,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 0 }
+    },
+    "ST-UL": {
+      "number": 0,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 1 }
+    },
+    "URDL+": {
+      "number": 5,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
+    },
+    "URD+": {
+      "number": 5,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 0 }
+    },
+    "URL+": {
+      "number": 5,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "UR+": {
+      "number": 5,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 0 }
+    },
+    "UL+": {
+      "number": 4,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 1 }
+    },
+    "UD+": {
+      "number": 4,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 1, "LEFT": 0 }
+    },
+    "RL+": {
+      "number": 3,
+      "connections": { "UP": 0, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "URDLx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": -1, "DOWN": -1, "LEFT": -1 }
+    },
+    "URDx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": -1, "DOWN": -1, "LEFT": 0 }
+    },
+    "URLx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": -1, "DOWN": 0, "LEFT": -1 }
+    },
+    "URx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": -1, "DOWN": 0, "LEFT": 0 }
+    },
+    "ULx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 0, "DOWN": 0, "LEFT": -1 }
+    },
+    "UDx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 0, "DOWN": -1, "LEFT": 0 }
+    },
+    "RLx": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": -1, "DOWN": 0, "LEFT": -1 }
+    },
+    "Ux": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 0, "DOWN": 0, "LEFT": 0 }
+    },
+    "Rx": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": -1, "DOWN": 0, "LEFT": 0 }
+    },
+    "UR+DL+": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 2, "LEFT": 2 }
+    },
+    "UL+RD+": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 2, "DOWN": 2, "LEFT": 1 }
+    },
+    "UD+RL+": {
+      "number": 2,
+      "connections": { "UP": 1, "RIGHT": 2, "DOWN": 1, "LEFT": 2 }
+    },
+    "UD+RLx": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": -1, "DOWN": 1, "LEFT": -1 }
+    },
+    "RL+UDx": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 1, "DOWN": -1, "LEFT": 1 }
+    },
+    "UD+Rx": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": -1, "DOWN": 1, "LEFT": 0 }
+    },
+    "UL+Dx": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": -1, "LEFT": 1 }
+    },
+    "RD+Ux": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 1, "DOWN": 1, "LEFT": 0 }
+    },
+    "UR+Dx": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": -1, "LEFT": 0 }
+    },
+    "UR+E": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 0 }
+    },
+    "UL+E": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 1 }
+    },
+    "UxE": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 0 }
+    },
+    "RxE": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": 1, "DOWN": 0, "LEFT": 0 }
+    },
+    "UD+B": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 1, "LEFT": 0 }
+    },
+    "UR+B": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 0 }
+    },
+    "RL+B": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "UL+V": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 1 }
+    },
+    "RL+V": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "UD+RxV": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": -1, "DOWN": 1, "LEFT": 0 }
+    },
+    "URDL+C": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
+    },
+    "URD+LxC": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": -1 }
+    },
+    "URL+DxC": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": -1, "LEFT": 1 }
+    },
+    "RL+UxC": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "URD+C": {
+      "number": 1,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 0 }
+    },
+    "URL+C": {
+      "number": 3,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 1 }
+    },
+    "UxC": {
+      "number": 1,
+      "connections": { "UP": -1, "RIGHT": 0, "DOWN": 0, "LEFT": 0 }
+    },
+    "RxC": {
+      "number": 1,
+      "connections": { "UP": 0, "RIGHT": -1, "DOWN": 0, "LEFT": 0 }
+    }
+  },
+  "action_card": {
+    "Li+": 2,
+    "P+": 2,
+    "W+": 2,
+    "LiP+": 1,
+    "LiW+": 1,
+    "PW+": 1,
+    "Lix": 3,
+    "Px": 3,
+    "Wx": 3,
+    "RoF": 4,
+    "MAP": 6,
+    "Pri+": 4,
+    "Vol-": 3,
+    "Prix": 3,
+    "Vol#": 4,
+    "VuR": 2,
+    "CdR": 2,
+    "CdM": 2
+  },
+  "roles": {
+    "NainVert": 4,
+    "NainBleu": 4,
+    "Saboteur": 3,
+    "Géologue": 2,
+    "Profiteur": 1,
+    "Boss": 1
+  }
+}

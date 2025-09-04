@@ -19,3 +19,8 @@ class Card:
     def __hash__(self) -> int:
         """Returns the hash of the Card instance."""
         return hash(self._name)
+
+    @property
+    def name(self) -> str:
+        """Returns the name of the card."""
+        return self._name
