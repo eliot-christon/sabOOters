@@ -4,6 +4,10 @@
       "number": 0,
       "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
     },
+    "GOAL": {
+      "number": 0,
+      "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }
+    },
     "END": {
       "number": 0,
       "connections": { "UP": 1, "RIGHT": 1, "DOWN": 1, "LEFT": 1 }

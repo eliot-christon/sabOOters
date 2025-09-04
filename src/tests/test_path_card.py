@@ -1,6 +1,12 @@
 """Tests for the PathCard module."""
 
-from src.core.cards.path_card import CardConnections, PathCard, StartCard
+from json import load
+from pathlib import Path
+
+from src.core.cards.path_card import CardConnections, GoalCard, PathCard, StartCard
+
+path_card_data = load(Path.open("src/core/cards/cards_data.json"))["path_card"]
+
 
 # %% Tests for PathCard and CardConnections
 
@@ -52,3 +58,28 @@ def test_start_card_flip() -> None:
     assert start_card.connections.RIGHT == original_connections.LEFT
     assert start_card.connections.DOWN == original_connections.UP
     assert start_card.connections.LEFT == original_connections.RIGHT
+
+
+# %% Tests for GoalCard
+
+
+def test_goal_card_initialization() -> None:
+    """Test the initialization of a GoalCard instance."""
+    goal_card = GoalCard(
+        name="TestGoalCard",
+        connections=CardConnections.from_dict({"UP": 1, "RIGHT": 1, "DOWN": 0, "LEFT": 0}),
+    )
+    assert isinstance(goal_card.connections, CardConnections)
+
+
+def test_goal_card_reveal() -> None:
+    """Test the reveal method of a GoalCard instance."""
+    test_connections = CardConnections.from_dict({"UP": 0, "RIGHT": 0, "DOWN": 1, "LEFT": 1})
+    goal_card = GoalCard(name="TestGoalCard", connections=test_connections)
+    assert goal_card.connections == CardConnections.from_dict(path_card_data["GOAL"]["connections"])
+    assert goal_card.name == "GOAL"
+    assert goal_card.read_real_name() == "TestGoalCard"
+    goal_card.reveal()
+    assert goal_card.connections == test_connections
+    assert goal_card.name == "TestGoalCard"
+    assert goal_card.read_real_name() == "TestGoalCard"
