@@ -3,7 +3,13 @@
 from json import load
 from pathlib import Path
 
-from src.core.cards.path_card import CardConnections, GoalCard, PathCard, StartCard
+from src.core.cards.path_card import (
+    CardConnections,
+    GoalCard,
+    PathCard,
+    StartCard,
+    get_3_goal_cards,
+)
 
 path_card_data = load(Path.open("src/core/cards/cards_data.json"))["path_card"]
 
@@ -79,7 +85,20 @@ def test_goal_card_reveal() -> None:
     assert goal_card.connections == CardConnections.from_dict(path_card_data["GOAL"]["connections"])
     assert goal_card.name == "GOAL"
     assert goal_card.read_real_name() == "TestGoalCard"
+    assert not goal_card.is_visible
     goal_card.reveal()
     assert goal_card.connections == test_connections
     assert goal_card.name == "TestGoalCard"
     assert goal_card.read_real_name() == "TestGoalCard"
+    assert goal_card.is_visible
+
+
+def test_get_3_goal_cards() -> None:
+    """Test the get_3_goal_cards function."""
+    goal_cards = get_3_goal_cards()
+    assert len(goal_cards) == 3
+    for card in goal_cards:
+        assert isinstance(card, GoalCard)
+        assert card.name == "GOAL"
+        assert not card.is_visible
+        assert card.read_real_name() in ["ST-UL", "ST-UR", "END"]

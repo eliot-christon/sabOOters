@@ -2,6 +2,7 @@
 
 from json import load
 from pathlib import Path
+from random import shuffle
 
 from src.core.cards.card import Card
 
@@ -40,7 +41,7 @@ class CardConnections:
         return hash((self.UP, self.RIGHT, self.DOWN, self.LEFT))
 
     @classmethod
-    def from_dict(cls, data: dict) -> "CardConnections":
+    def from_dict(cls, data: dict[str:int]) -> "CardConnections":
         """Creates a CardConnections instance from a dictionary."""
         connections = cls()
         connections.UP = data.get("UP", 0)
@@ -54,10 +55,16 @@ class PathCard(Card):
     """Card representing the path taken by miners exploring the mine.
     These cards can be placed on the game board."""
 
-    def __init__(self, name: str, connections: dict[str:int]) -> None:
+    def __init__(self, name: str, connections: CardConnections) -> None:
         """Initializes a PathCard with a name and its connections."""
         self._connections = connections
         super().__init__(name)
+
+    @classmethod
+    def from_dict(cls, name: str, connections_dict: dict[str:int]) -> "PathCard":
+        """Creates a PathCard instance from a dictionary of connections."""
+        connections = CardConnections.from_dict(connections_dict)
+        return cls(name, connections)
 
     def flip(self) -> None:
         """Flips the card 180 degrees."""
@@ -114,3 +121,10 @@ class GoalCard(PathCard):
     def read_real_name(self) -> str:
         """Returns the real name of the goal card."""
         return self.__real_name
+
+
+def get_3_goal_cards() -> list[GoalCard]:
+    """Returns a shuffled list of the 3 goal cards."""
+    goal_names = ["ST-UL", "ST-UR", "END"]
+    shuffle(goal_names)
+    return [GoalCard(name, CardConnections.from_dict(path_card_data[name])) for name in goal_names]
