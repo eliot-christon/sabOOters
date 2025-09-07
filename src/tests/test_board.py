@@ -57,10 +57,16 @@ def test_board_place_card() -> None:
     assert board.get_card(row, col) == path_card
 
     path_card_invalid = PathCard.from_dict(
-        "InvalidPathCard", {"UP": 1, "RIGHT": 0, "DOWN": 0, "LEFT": 0}
+        "InvalidPathCard", {"UP": -1, "RIGHT": 0, "DOWN": 0, "LEFT": 0}
     )
     result, _ = board.place_card(row, col, path_card_invalid)
     assert result is False
 
-    result, _ = board.place_card(2, 0, path_card)
+    result, _ = board.place_card(0, 0, path_card_invalid)
     assert result is False
+
+    result, _ = board.place_card(2, 0, path_card_invalid)
+    assert result is False
+
+    result, _ = board.place_card(3, 0, path_card_invalid)
+    assert result is True

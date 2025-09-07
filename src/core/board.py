@@ -124,15 +124,21 @@ class Board:
             "RIGHT": ("RIGHT", "LEFT", "Connection mismatch with RIGHT card."),
         }
 
+        count_adjacent = 0
+
         for direction, (adj_row, adj_col) in adjacent_positions.items():
             if 0 <= adj_row < self.__rows and 0 <= adj_col < self.__columns:
                 adjacent_card = self.__grid[adj_row][adj_col]
                 if adjacent_card is not None:
+                    count_adjacent += 1
                     card_side, adj_side, error_msg = connection_map[direction]
-                    if (getattr(card.connections, card_side) > 0) != (
-                        getattr(adjacent_card.connections, adj_side) > 0
+                    if (getattr(card.connections, card_side) != 0) != (
+                        getattr(adjacent_card.connections, adj_side) != 0
                     ):
                         return False, error_msg
+
+        if count_adjacent == 0:
+            return False, "Card must connect to at least one adjacent card."
 
         return True, "All connections are valid."
 
