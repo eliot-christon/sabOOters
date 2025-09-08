@@ -13,8 +13,13 @@ from src.core.cards.path_card import PathCard
 card_data = load(Path.open("src/core/cards/cards_data.json"))
 
 
-def build_deck() -> list[Card]:
-    """Builds and returns a shuffled deck of cards for the game."""
+def build_deck(cards_to_remove: int = 10) -> list[Card]:
+    """Builds and returns a shuffled deck of cards for the game.
+    Args:
+        cards_to_remove (int): The number of random cards to remove from the deck.
+    Returns:
+        list[Card]: A shuffled list of Card objects representing the deck.
+    """
     deck: list[Card] = []
 
     # Create PathCards
@@ -36,4 +41,4 @@ def build_deck() -> list[Card]:
             deck.append(action_card)
 
     shuffle(deck)
-    return deck
+    return deck[cards_to_remove:]  # Remove a number of random cards to adjust deck size
