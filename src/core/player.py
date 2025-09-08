@@ -4,8 +4,13 @@ This module contains player-related classes and functions.
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from src.core.cards.action_card import ActionCard
 from src.core.cards.card import Card
+
+if TYPE_CHECKING:
+    from src.core.cards.roles import Role
 
 
 class Player:
@@ -13,7 +18,7 @@ class Player:
     Represents a player in the game.
     """
 
-    def __init__(self, name: str, role: str, hand: list[Card], bench: list[Card]) -> None:
+    def __init__(self, name: str, role: Role, hand: list[Card], bench: list[Card]) -> None:
         """
         Initializes a Player with a name, role, hand of cards, and bench of cards.
         """
@@ -32,6 +37,11 @@ class Player:
     def role(self) -> str:
         """Returns the role of the player."""
         return self.__role
+
+    @role.setter
+    def role(self, role: Role) -> None:
+        """Sets the role of the player."""
+        self.__role = role
 
     @property
     def hand(self) -> list[Card]:

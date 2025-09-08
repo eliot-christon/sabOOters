@@ -2,7 +2,12 @@
 
 from src.core.cards.action_card import ActionCard
 from src.core.cards.path_card import PathCard
+from src.core.cards.roles import Role
 from src.core.player import Player
+
+blue_role = Role().NAME = "Blue"
+red_role = Role().NAME = "Red"
+yellow_role = Role().NAME = "Yellow"
 
 
 def test_player_initialization() -> None:
@@ -10,9 +15,9 @@ def test_player_initialization() -> None:
     card = PathCard.from_dict(
         name="Straight", connections_dict={"UP": 1, "DOWN": 1, "LEFT": 0, "RIGHT": 0}
     )
-    player = Player("Alice", "Red", [card], [])
+    player = Player("Alice", red_role, [card], [])
     assert player.name == "Alice"
-    assert player.role == "Red"
+    assert player.role == red_role
     assert len(player.hand) == 1
     assert len(player.bench) == 0
     assert player.hand[0] is card
@@ -26,9 +31,9 @@ def test_player_equality() -> None:
     card2 = PathCard.from_dict(
         name="Curve", connections_dict={"UP": 1, "DOWN": 0, "LEFT": 1, "RIGHT": 0}
     )
-    player1 = Player("Bob", "Blue", [card1], [card2])
-    player2 = Player("Bob", "Blue", [card1], [card2])
-    player3 = Player("Charlie", "Green", [card1], [])
+    player1 = Player("Bob", blue_role, [card1], [card2])
+    player2 = Player("Bob", blue_role, [card1], [card2])
+    player3 = Player("Charlie", yellow_role, [card1], [])
     assert player1 == player2
     assert player1 != player3
 
@@ -44,10 +49,10 @@ def test_player_blocked_status() -> None:
     defensive_card = ActionCard("Shield", no_action)
     defensive_card.make_defensive()
 
-    player_with_offensive = Player("Dave", "Yellow", [], [offensive_card])
-    player_with_defensive = Player("Eve", "Purple", [], [defensive_card])
-    player_with_both = Player("Frank", "Orange", [], [offensive_card, defensive_card])
-    player_with_none = Player("Grace", "Pink", [], [])
+    player_with_offensive = Player("Dave", yellow_role, [], [offensive_card])
+    player_with_defensive = Player("Eve", blue_role, [], [defensive_card])
+    player_with_both = Player("Frank", red_role, [], [offensive_card, defensive_card])
+    player_with_none = Player("Grace", yellow_role, [], [])
 
     assert player_with_offensive.is_blocked() is True
     assert player_with_defensive.is_blocked() is False
@@ -63,7 +68,7 @@ def test_player_draw_card() -> None:
     card2 = PathCard.from_dict(
         name="Curve", connections_dict={"UP": 1, "DOWN": 0, "LEFT": 1, "RIGHT": 0}
     )
-    player = Player("Hannah", "Cyan", [card1], [])
+    player = Player("Hannah", blue_role, [card1], [])
     assert len(player.hand) == 1
     player.draw(card2)
     assert len(player.hand) == 2
@@ -78,7 +83,7 @@ def test_player_discard_card() -> None:
     card2 = PathCard.from_dict(
         name="Curve", connections_dict={"UP": 1, "DOWN": 0, "LEFT": 1, "RIGHT": 0}
     )
-    player = Player("Ivy", "Magenta", [card1, card2], [])
+    player = Player("Ivy", yellow_role, [card1, card2], [])
     assert len(player.hand) == 2
     success, _ = player.discard(card1)
     assert success
