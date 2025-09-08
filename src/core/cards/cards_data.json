@@ -214,11 +214,35 @@
     "CdM": 2
   },
   "roles": {
-    "NainVert": 4,
-    "NainBleu": 4,
-    "Saboteur": 3,
-    "Géologue": 2,
-    "Profiteur": 1,
-    "Boss": 1
+    "GreenDwarf": {
+      "number": 4,
+      "description": "Green Dwarf - You want to reach the gold at the end of the mine.",
+      "team": "Green"
+    },
+    "BlueDwarf": {
+      "number": 4,
+      "description": "Blue Dwarf - You want to reach the gold at the end of the mine.",
+      "team": "Blue"
+    },
+    "SabOOter": {
+      "number": 3,
+      "description": "SabOOter - You want to prevent the dwarfs from reaching the gold.",
+      "team": "SabOOter"
+    },
+    "Geologist": {
+      "number": 2,
+      "description": "Geologist - You want to collect the most gems.",
+      "team": "Geologist"
+    },
+    "Profiteur": {
+      "number": 1,
+      "description": "Profiteur - You always win, but less points, try to prevent others from winning.",
+      "team": "Profiteur"
+    },
+    "Boss": {
+      "number": 1,
+      "description": "Boss - You want to reach the gold at the end of the mine.",
+      "team": "GreenBlue"
+    }
   }
 }
