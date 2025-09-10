@@ -83,7 +83,11 @@ class Player:
         """Draws a card or a list of cards from the deck to the player's hand."""
         if isinstance(deck, Card):
             self.__hand.append(deck)
-        elif isinstance(deck, list[Card]) and len(deck) > 0:
+        elif (
+            isinstance(deck, list)
+            and len(deck) > 0
+            and all(isinstance(card, Card) for card in deck)
+        ):
             card_drawn = deck.pop(0)
             self.__hand.append(card_drawn)
         else:
@@ -99,6 +103,10 @@ class Player:
             self.__hand.remove(card)
             return True, "The card has been discarded."
         return False, "The card is not in the player's hand."
+
+    def empty_hand(self) -> None:
+        """Empties the player's hand."""
+        self.__hand.clear()
 
     def is_blocked(self) -> bool:
         """

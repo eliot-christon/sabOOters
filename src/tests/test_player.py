@@ -92,3 +92,17 @@ def test_player_discard_card() -> None:
     success, _ = player.discard(card1)
     assert not success
     assert len(player.hand) == 1
+
+
+def test_empty_hand() -> None:
+    """Test emptying the player's hand."""
+    card1 = PathCard.from_dict(
+        name="Straight", connections_dict={"UP": 1, "DOWN": 1, "LEFT": 0, "RIGHT": 0}
+    )
+    card2 = PathCard.from_dict(
+        name="Curve", connections_dict={"UP": 1, "DOWN": 0, "LEFT": 1, "RIGHT": 0}
+    )
+    player = Player("Jack", red_role, [card1, card2], [])
+    assert len(player.hand) == 2
+    player.empty_hand()
+    assert len(player.hand) == 0
