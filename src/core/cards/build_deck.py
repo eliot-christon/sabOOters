@@ -35,9 +35,15 @@ def build_deck(cards_to_remove: int = 10) -> list[Card]:
         """A placeholder function for ActionCard actions that do nothing."""
 
     # Create ActionCards
-    for card_name, number_of_copies in card_data["action_card"].items():
+    for card_name, card_info in card_data["action_card"].items():
+        number_of_copies = card_info.get("number", 1)
+        type_of_card = card_info.get("type", "neutral")
         for _ in range(number_of_copies):
             action_card = ActionCard(name=card_name, action=no_action)
+            if type_of_card == "offensive":
+                action_card.make_offensive()
+            elif type_of_card == "defensive":
+                action_card.make_defensive()
             deck.append(action_card)
 
     shuffle(deck)

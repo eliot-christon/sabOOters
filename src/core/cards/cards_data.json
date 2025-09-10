@@ -194,24 +194,74 @@
     }
   },
   "action_card": {
-    "Li+": 2,
-    "P+": 2,
-    "W+": 2,
-    "LiP+": 1,
-    "LiW+": 1,
-    "PW+": 1,
-    "Lix": 3,
-    "Px": 3,
-    "Wx": 3,
-    "RoF": 4,
-    "MAP": 6,
-    "Pri+": 4,
-    "Vol-": 3,
-    "Prix": 3,
-    "Vol#": 4,
-    "VuR": 2,
-    "CdR": 2,
-    "CdM": 2
+    "Lamp": {
+      "number": 2,
+      "type": "Defensive"
+    },
+    "Pickaxe": {
+      "number": 2,
+      "type": "Defensive"
+    },
+    "Carriage": {
+      "number": 2,
+      "type": "Defensive"
+    },
+    "Lamp + Pickaxe": {
+      "number": 1,
+      "type": "Defensive"
+    },
+    "Lamp + Carriage": {
+      "number": 1,
+      "type": "Defensive"
+    },
+    "Pickaxe + Carriage": {
+      "number": 1,
+      "type": "Defensive"
+    },
+    "Broken Lamp": {
+      "number": 3,
+      "type": "Offensive"
+    },
+    "Broken Pickaxe": {
+      "number": 3,
+      "type": "Offensive"
+    },
+    "Broken Carriage": {
+      "number": 3,
+      "type": "Offensive"
+    },
+    "Rockfall": {
+      "number": 4,
+      "type": "Neutral"
+    },
+    "Map": {
+      "number": 6,
+      "type": "Neutral"
+    },
+    "Prison": {
+      "number": 3,
+      "type": "Offensive"
+    },
+    "Escape": {
+      "number": 4,
+      "type": "Defensive"
+    },
+    "Thief": {
+      "number": 3,
+      "type": "Offensive"
+    },
+    "Stop the Thief": {
+      "number": 4,
+      "type": "Defensive"
+    },
+    "Spy": {
+      "number": 2,
+      "type": "Neutral"
+    },
+    "Change Role": {
+      "number": 1,
+      "type": "Neutral"
+    }
   },
   "roles": {
     "GreenDwarf": {
