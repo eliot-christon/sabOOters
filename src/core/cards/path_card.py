@@ -1,12 +1,12 @@
 """This module defines the base class for path cards in the game."""
 
 from json import load
+from pathlib import Path
 from random import shuffle
 
 from src.core.cards.card import Card
 
-
-with open("src/core/cards/cards_data.json", encoding="utf-8") as file:
+with Path("src/core/cards/cards_data.json").open(encoding="utf-8") as file:
     path_card_data = load(file)["path_card"]
 
 

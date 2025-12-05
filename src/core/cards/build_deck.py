@@ -3,13 +3,14 @@ This file contains the function to build the deck of cards for the game.
 """
 
 from json import load
+from pathlib import Path
 from random import shuffle
 
 from src.core.cards.action_card import ActionCard
 from src.core.cards.card import Card
 from src.core.cards.path_card import PathCard
 
-with open("src/core/cards/cards_data.json", encoding="utf-8") as file:
+with Path("src/core/cards/cards_data.json").open(encoding="utf-8") as file:
     card_data = load(file)
 
 

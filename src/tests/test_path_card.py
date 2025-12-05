@@ -1,6 +1,7 @@
 """Tests for the PathCard module."""
 
 from json import load
+from pathlib import Path
 
 from src.core.cards.path_card import (
     CardConnections,
@@ -10,7 +11,7 @@ from src.core.cards.path_card import (
     get_3_goal_cards,
 )
 
-with open("src/core/cards/cards_data.json", encoding="utf-8") as file:
+with Path("src/core/cards/cards_data.json").open(encoding="utf-8") as file:
     path_card_data = load(file)["path_card"]
 
 

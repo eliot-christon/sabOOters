@@ -1,10 +1,10 @@
 """This module contains role-related classes, functions, and data."""
 
 from json import load
+from pathlib import Path
 from random import shuffle
 
-
-with open("src/core/cards/cards_data.json", encoding="utf-8") as file:
+with Path("src/core/cards/cards_data.json").open(encoding="utf-8") as file:
     roles = load(file)["roles"]
 
 
