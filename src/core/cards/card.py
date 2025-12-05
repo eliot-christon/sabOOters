@@ -8,7 +8,7 @@ class Card:
         """Initializes a Card with a name."""
         self._name = name
 
-    def __eq__(self, other: "Card") -> bool:
+    def __eq__(self, other: object) -> bool:
         """Checks equality between two Card instances."""
         if not isinstance(other, Card):
             return False

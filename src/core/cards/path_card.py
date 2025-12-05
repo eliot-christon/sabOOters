@@ -1,12 +1,13 @@
 """This module defines the base class for path cards in the game."""
 
 from json import load
-from pathlib import Path
 from random import shuffle
 
 from src.core.cards.card import Card
 
-path_card_data = load(Path.open("src/core/cards/cards_data.json"))["path_card"]
+
+with open("src/core/cards/cards_data.json", encoding="utf-8") as file:
+    path_card_data = load(file)["path_card"]
 
 
 class CardConnections:
@@ -23,7 +24,7 @@ class CardConnections:
             f"CardConnections(UP={self.UP}, RIGHT={self.RIGHT}, DOWN={self.DOWN}, LEFT={self.LEFT})"
         )
 
-    def __eq__(self, other: "CardConnections") -> bool:
+    def __eq__(self, other: object) -> bool:
         """Checks equality between two CardConnections instances."""
         if not isinstance(other, CardConnections):
             return False
